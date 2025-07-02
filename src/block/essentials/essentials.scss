@@ -1,0 +1,145 @@
+.essentials {
+
+    padding: 68px min(28px, max(var(--vw)* 28, 6px)) 86px;
+    
+    &__title {
+        font-weight: 700;
+        font-size: 33px;
+        line-height: 55.2px;
+        letter-spacing: 1.2px;
+        text-align: center;
+        padding-bottom: 18px;
+        width: 477px;
+        margin: 0 auto;
+        color: var(--title);
+    }
+
+    &__text {
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28.98px;
+        letter-spacing: 0%;
+        text-align: center;
+        width: 441px;
+        margin: 0 auto;
+        color: var(--text);
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-evenly;   
+        justify-content: space-between;
+        padding: 0 min(45px, max(var(--vw)* 45, 0px));
+        margin-top: 5px;  
+        @media (max-width: 767px) {
+            justify-content: space-around;
+        }   
+    }
+
+    &__item {
+        max-width: 255px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    &__decor {
+        position: absolute;
+        top: 70px;
+        width: 286px;
+        height: 229px;
+        border-radius: 50%;
+        background-color: var(--oval);
+    }
+    &__crop {
+        width: 251px;
+        height: 201px;        
+        overflow: hidden;
+        position: absolute;
+        top: 93px;
+        left: -18px;
+    }
+    &__decor-crop {
+        top: -15px;
+        width: 251px;
+        height: 229px;
+    }
+    &__picture {
+        position: relative;
+        width: 100%;
+        max-width: 253px;
+        top: 0;
+    }
+
+    &__img {
+        width: 100%;
+        @media (max-width: 412px) {
+            width: auto;
+            padding: 0 8px; //ПОДОБРАЛ
+        }
+    }
+
+    &__coment {
+        margin-top: 25px;
+        height: 156px;
+        overflow-y: auto;
+        z-index: 10;
+        padding: 0 10px;
+    }
+    &__name {
+        font-size: 14px;
+        line-height: 23.8px;
+        letter-spacing: 0.5px;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--title);
+        padding-bottom: 5px;
+    }
+
+    &__price {
+        font-size: 13px;
+        line-height: 21px;
+        letter-spacing: 0.1px;
+        text-align: center;
+        color: var(--comment-img);
+        padding-bottom: 5px;
+        &::before {
+            content: "SET OF 4 -";
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0.1px;
+            text-align: center;
+            color: var(--comment-img);
+        }
+    }
+    &__price-fit {
+        &::before { 
+            content:'';
+        }
+    }
+    &__fit {
+        top: 110px;
+        height: 285px;
+        height: 204px;
+        width: 306px;
+        max-width: 306px;
+        left: 0px;
+        margin-bottom: 84px;
+
+        // width: 100%;
+        // max-width: none;
+    }
+    &__description {
+        font-size: 11px;
+        line-height: 19.6px;
+        letter-spacing: 0.2px;
+        text-align: center;
+        max-width: 161px;
+    }
+    &__indicators {
+            flex-wrap: nowrap;
+    }
+}

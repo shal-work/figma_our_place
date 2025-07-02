@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Place website by figma</title>
+    <meta name="description" content="Сайт Our Place по Figma">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body class="page">
+    <div class="wrapper">
+        <h1 class="visually-hidden">Our Place web-site for verstaem.online</h1>
+        <h2 class="attention reset">SHIPPING AND RETURNS ARE ALWAYS FREE FROM OUR PLACE TO YOURS 🙂</h2>
+        @@include('block/header/header.html')
+        <main class="main">
+            @@include('block/hero/hero.html')
+            @@include('block/logos/logos.html')
+            @@include('block/welcome/welcome.html')
+            @@include('block/design/design.html')
+            @@include('block/essentials/essentials.html')
+            @@include('block/dirtydishes/dirtydishes.html')
+        </main>
+        @@include('block/footer/footer.html')
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

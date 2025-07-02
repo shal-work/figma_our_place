@@ -1,0 +1,98 @@
+.carousel {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 4000;
+    &__indicators {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        list-style: none;
+        padding: 0;
+    }
+    &__item {
+        box-sizing: content-box;
+        flex: 0 0 auto;
+        width: 30px;
+        width: min(30px, max(var(--vw)* 30, 10px));
+        height: min(30px, max(var(--vw)* 30, 10px));
+        width: 26px;
+        height: 26px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: var(--background);
+        border: 3px solid var(--background);
+        background-clip: border-box;
+        will-change: transform;
+        transition: opacity .6s ease;
+        &:last-child {
+            margin-right: 0;
+        }
+        @media (max-width: 412px) {
+            margin-right: 4vw;
+            margin-bottom: 0;
+        }
+    }
+    // &__active {
+    //     opacity: 1;
+    //     border: 3px solid var(--indicator);
+    //     // background-clip: border-box;
+    //     // background-clip: padding-box;
+    //     // background-clip: content-box;
+    //     // background-clip: text;
+    // }    
+    &__essentials {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+.dark-salmon {
+    background-color: var(--dark-salmon);
+    border: 3px solid var(--dark-salmon);
+}
+.light-blue-grey {
+    background-color: var(--light-blue-grey);
+    border: 3px solid var(--light-blue-grey);
+}
+.light-brown {
+    background-color: var(--light-brown);
+    border: 3px solid var(--light-brown);
+}
+.cement-grey {
+    background-color: var(--cement-grey );
+    border: 3px solid var(--cement-grey );
+}
+.persian-red {
+    background-color: var(--persian-red);
+    border: 3px solid var(--persian-red);
+}
+.grey-silk {
+    background-color: var(--grey-silk);
+    border: 3px solid var(--grey-silk);
+}
+.green-grey {
+    background-color: var(--green-grey);
+    border: 3px solid var(--green-grey);
+}
+.forest-wolf {
+    background-color: var(--forest-wolf);
+    border: 3px solid var(--forest-wolf);
+}
+.color-white {
+    background-color: var(--background);
+    border: 3px solid var(--forest-wolf);
+}
+.active {
+    border-color: var(--indicator);
+}  
+
