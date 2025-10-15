@@ -399,7 +399,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function(selec
 
     for (let i = 0; i < this.length; i++) {
         let this1 = this[i].closest(selector);
-        debugger
         if(!this1) { //мое условие
             // this[i] = 'classNull';
             return this;
@@ -412,7 +411,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function(selec
     for (; counter < objLength; counter++) {
         delete this[counter];
     }
-    debugger
     return this;
 };
 
@@ -495,6 +493,29 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleAttribute = functi
         }
     }
 
+    return this;
+};
+
+//новые 15.10.2025, так как работает выше, после удаления артибута
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleBooleanAttribute = function (attributeName) {
+    for (let i = 0; i < this.length; i++) {
+        if (this[i].hasAttribute(attributeName)) { //можно не проверять, работает
+            if (this[i].getAttribute(attributeName) == 'false') {
+                this[i].setAttribute(attributeName, true);
+            } else {
+                this[i].setAttribute(attributeName, false);
+            }          
+        }
+    }
+    return this;
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleChangeAttribute = function (attributeName, value) {
+    for (let i = 0; i < this.length; i++) {
+        if (this[i].hasAttribute(attributeName)) { //можно не проверять, работает
+            this[i].setAttribute(attributeName, value);        
+        }
+    }
     return this;
 };
 
@@ -597,6 +618,21 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggle = function() {
     return this;
 };
 
+// toggle style overflow 
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleOverflow = function() {
+    for(let i = 0; i < this.length; i++) {
+        if (!this[i].style) {
+            continue;
+        }
+        if (this[i].style.overflow === 'hidden') {
+            this[i].style.overflow = '';
+        } else {
+            this[i].style.overflow = 'hidden';
+        }
+    }
+
+    return this;
+}; 
 
 /***/ }),
 
@@ -781,7 +817,23 @@ $('.menu').on('click', () => {toggleBurger()});
 function toggleBurger () {
     $('.header').toggleClass("fadeIn--open");
     $('.page').toggleClass('none-scroll');
+    toggleBurger();
 }
+
+function toggleBurger () {
+    $('.header').toggleClass("fadeIn--open");
+    $('.page').toggleClass('none-scroll');
+    
+    $('.header__burger').toggleBooleanAttribute('aria-expanded');
+    const burger = document.querySelector('.header__burger');
+    let expanded = burger.getAttribute('aria-expanded') === 'true';  
+    if (Boolean(expanded)) {
+        $('.header__burger').toggleChangeAttribute('aria-label', 'Закрыть меню');
+    } else {
+        $('.header__burger').toggleChangeAttribute('aria-label', 'Открыть меню');
+    }
+}
+
 
 $.prototype.activeItem = function(dot) {
     for (let i = 0; i < this.length; i++) {
