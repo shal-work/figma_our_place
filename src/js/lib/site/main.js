@@ -1,14 +1,15 @@
-$('.header__burger').on('click', () => {toggleBurger()});
-$('.menu').on('click', () => {toggleBurger()});
-function toggleBurger () {
-    $('.header').toggleClass("fadeIn--open");
-    $('.page').toggleClass('none-scroll');
+$('.header__burger').on('click', () => { 
     toggleBurger();
-}
+    $('body').toggleOverflow();
+});
+$('.menu').on('click', () => {
+    toggleBurger();
+     $('body').offOverflow();
+});
+
 
 function toggleBurger () {
     $('.header').toggleClass("fadeIn--open");
-    $('.page').toggleClass('none-scroll');
     
     $('.header__burger').toggleBooleanAttribute('aria-expanded');
     const burger = document.querySelector('.header__burger');
