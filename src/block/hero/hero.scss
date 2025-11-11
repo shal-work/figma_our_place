@@ -5,10 +5,14 @@
     padding-bottom: min(170px, max(var(--vw)* 170, 24px));
     padding-bottom: 170px;
     width: 100%;
-    background-image: image-set(
-        url("./assets/img/hero.webp") type("image/webp"), 
-        url("./assets/img/hero.png")
+    // background-image: image-set(
+    //     url("./assets/img/hero.webp") type("image/webp"), 
+    //     url("./assets/img/hero.png") type('image/png')
+    // );
+    background-image:  url("./assets/img/hero.png");
+    background-image: image-set(url("./assets/img/hero.webp") type("image/webp"),
     );
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
